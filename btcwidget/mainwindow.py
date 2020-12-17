@@ -93,7 +93,8 @@ class MainWindow(Gtk.Window):
         market = market_config['market']
         market_currency = market[3:]
         graph_currency = config['graph_currency']
-        graph_price_mult = btcwidget.currency.service.convert(1, market_currency, graph_currency)
+        # graph_price_mult = btcwidget.currency.service.convert(1, market_currency, graph_currency)
+        graph_price_mult = 1
         x = [int((e['time'] - now) / config['time_axis_div']) for e in graph_data]
         y = [float(e['close']) * graph_price_mult for e in graph_data]
         self._graph.set_data(market_id, x, y, self._get_color(i))

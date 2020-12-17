@@ -33,11 +33,11 @@ class OptionsDialog(Gtk.Dialog):
 
         self.graph_currency_combo = Gtk.ComboBoxText()
         self.graph_currency_combo.set_entry_text_column(0)
-        currencies = sorted(btcwidget.currency.service.list())
-        for i, currency in enumerate(currencies):
-            self.graph_currency_combo.append_text(currency)
-            if currency == config['graph_currency']:
-                self.graph_currency_combo.set_active(i)
+        # currencies = sorted(btcwidget.currency.service.list())
+        # for i, currency in enumerate(currencies):
+        #     self.graph_currency_combo.append_text(currency)
+        #     if currency == config['graph_currency']:
+        #         self.graph_currency_combo.set_active(i)
         self._add_label_and_widget("Graph Currency:", self.graph_currency_combo)
 
         self.dark_theme_check = Gtk.CheckButton("Dark Theme", active=config['dark_theme'])
